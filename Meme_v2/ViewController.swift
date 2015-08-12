@@ -17,7 +17,8 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     @IBOutlet weak var camButton: UIButton!
     @IBOutlet weak var textTop: UITextField!
     @IBOutlet weak var textBottom: UITextField!
-    @IBOutlet weak var shareButton: UIButton!
+//@IBOutlet weak var shareButton: UIButton!
+    @IBOutlet weak var shareButton: UIBarButtonItem!
     
     
     
@@ -94,13 +95,15 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     
     
     func keyboardWillShow(notification: NSNotification) {
-        
-        view.frame.origin.y -= getKeyboardHeight(notification)
-        
+        if textBottom.isFirstResponder(){
+            view.frame.origin.y -= getKeyboardHeight(notification)
+        }
     }
     
     func keyboardWillHide(notification: NSNotification){
-        view.frame.origin.y += getKeyboardHeight(notification)
+        if textBottom.isFirstResponder(){
+            view.frame.origin.y += getKeyboardHeight(notification)
+        }
     }
     
     func subscribeToKeyboardNotification(){
@@ -181,7 +184,7 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         
         
         //Show toolbar and navbar
-        self.navigationController?.navigationBarHidden = false
+        navigationController?.navigationBarHidden = false
         
         
         return memedImage
@@ -204,7 +207,7 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         
         let myactivityController = UIActivityViewController(activityItems: [memeImage], applicationActivities: nil)
         
-        self.presentViewController(myactivityController, animated: true, completion: nil)
+        presentViewController(myactivityController, animated: true, completion: nil)
         
     }
     
