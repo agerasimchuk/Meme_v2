@@ -23,16 +23,16 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     
     override func viewWillAppear(animated: Bool) {
         camButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
-        self.subscribeToKeyboardNotification()
-        self.subscribeToKeyboardHideNotification()
+        subscribeToKeyboardNotification()
+        subscribeToKeyboardHideNotification()
         
         
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        self.unsubscribeFromKeyboardNotification()
-        self.unsubscribeFromKeyboardHideNotification()
+        unsubscribeFromKeyboardNotification()
+        unsubscribeFromKeyboardHideNotification()
     }
     
     
@@ -95,12 +95,12 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     
     func keyboardWillShow(notification: NSNotification) {
         
-        self.view.frame.origin.y -= getKeyboardHeight(notification)
+        view.frame.origin.y -= getKeyboardHeight(notification)
         
     }
     
     func keyboardWillHide(notification: NSNotification){
-        self.view.frame.origin.y += getKeyboardHeight(notification)
+        view.frame.origin.y += getKeyboardHeight(notification)
     }
     
     func subscribeToKeyboardNotification(){
@@ -123,7 +123,7 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         let pickerController = UIImagePickerController()
         pickerController.delegate = self
         pickerController.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-        self.presentViewController(pickerController, animated: true, completion: nil)
+        presentViewController(pickerController, animated: true, completion: nil)
         
         
     }
@@ -135,7 +135,7 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         let pickerController = UIImagePickerController()
         pickerController.delegate = self
         pickerController.sourceType = UIImagePickerControllerSourceType.Camera
-        self.presentViewController(pickerController, animated: true, completion: nil)
+        presentViewController(pickerController, animated: true, completion: nil)
         
         
         
@@ -154,7 +154,7 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             imagePickerView.image = image
             imagePickerView.contentMode = UIViewContentMode.ScaleToFill
-            self.dismissViewControllerAnimated(true, completion: nil)
+            dismissViewControllerAnimated(true, completion: nil)
             
             displayShowButton()
             
@@ -169,11 +169,11 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     {
         
         //Hide toolbar and navbar
-        self.navigationController?.navigationBarHidden = true
+        navigationController?.navigationBarHidden = true
         
         // Render view to an image
         UIGraphicsBeginImageContext(self.view.frame.size)
-        self.view.drawViewHierarchyInRect(self.view.frame,
+        view.drawViewHierarchyInRect(self.view.frame,
             afterScreenUpdates: true)
         let memedImage : UIImage =
         UIGraphicsGetImageFromCurrentImageContext()
