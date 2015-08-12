@@ -55,9 +55,6 @@
                                 <state key="normal" title="Share">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="share:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="vPP-b2-LfC"/>
-                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BHM-yH-3ef">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -137,6 +134,7 @@
                     <connections>
                         <outlet property="camButton" destination="acr-Rh-8Vd" id="Aj6-cc-QUm"/>
                         <outlet property="imagePickerView" destination="BHM-yH-3ef" id="XrK-Ef-3gY"/>
+                        <outlet property="shareButton" destination="ceU-AY-wO5" id="lmk-ZI-eIm"/>
                         <outlet property="textBottom" destination="rQI-73-KXX" id="4iF-K9-ipy"/>
                         <outlet property="textTop" destination="Wa0-Dg-Jdy" id="gQh-9P-jTy"/>
                     </connections>
