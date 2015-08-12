@@ -35,9 +35,6 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         self.unsubscribeFromKeyboardHideNotification()
     }
     
-    //ADD NOTIFICATIONS TO MOVE THE VIEW UP OR DOWN DEPENDING ON WHETHER THE KEYBOARD IS DISPLAYED OR HIDDEN
-    
-    
     
     
     override func viewDidLoad() {
