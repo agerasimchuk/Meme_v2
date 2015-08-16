@@ -196,6 +196,14 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         let meme = Meme( topText: textTop.text!, bottomText: textBottom.text!, imageOriginal:
             imagePickerView.image!, memedImage: generateMemedImage())
         
+        //Add it to the memes array in the Application Delegate
+        let object = UIApplication.sharedApplication().delegate
+        let appDelegate = object as! AppDelegate
+        
+        appDelegate.memes.append(meme)
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
+        
     }
     
     @IBAction func share(sender: AnyObject) {
