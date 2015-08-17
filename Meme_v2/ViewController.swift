@@ -172,7 +172,7 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     {
         
         //Hide toolbar and navbar
-        navigationController?.navigationBarHidden = true
+        navigationController?.navigationBar.hidden = true
         
         // Render view to an image
         UIGraphicsBeginImageContext(self.view.frame.size)
@@ -217,10 +217,11 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         myactivityController.completionWithItemsHandler = {
             (s: String!, ok: Bool, items: [AnyObject]!, err:NSError!) -> Void in
             self.save()
+            println("save the Meme")
             self.dismissViewControllerAnimated(true, completion: nil)
         }
         presentViewController(myactivityController, animated: true, completion: nil)
-        //myactivityController.dismissViewControllerAnimated(true, completion: nil)
+
         
           
     }
