@@ -201,24 +201,36 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         let appDelegate = object as! AppDelegate
         
         appDelegate.memes.append(meme)
-        
-        self.dismissViewControllerAnimated(true, completion: nil)
+        //self.dismissViewControllerAnimated(true, completion: nil)
+
         
     }
     
     @IBAction func share(sender: AnyObject) {
         
         
-        let memeSavedImage = save()
+        //let memeSavedImage: () = save()
         
         let memeImage = generateMemedImage()
         
         let myactivityController = UIActivityViewController(activityItems: [memeImage], applicationActivities: nil)
-        
+        myactivityController.completionWithItemsHandler = {
+            (s: String!, ok: Bool, items: [AnyObject]!, err:NSError!) -> Void in
+            self.save()
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
         presentViewController(myactivityController, animated: true, completion: nil)
+        //myactivityController.dismissViewControllerAnimated(true, completion: nil)
         
+          
     }
     
-    
+    func showTableView(){
+        //present table view
+        var controller: UITabBarController
+        controller = self.storyboard?.instantiateViewControllerWithIdentifier("tabBarController") as! UITabBarController
+        self.presentViewController(controller, animated: true, completion: nil)
+        println("mostro il risultato")
+    }
 }
 

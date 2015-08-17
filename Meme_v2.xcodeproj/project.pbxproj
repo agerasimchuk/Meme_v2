@@ -83,7 +83,10 @@
 		15282B1B1B756713005CC63F /* Meme_v2 */ = {
 			isa = PBXGroup;
 			children = (
+				15F67C8A1B7C255D00068E10 /* memeTableViewController.swift */,
+				15F67C8C1B7C256D00068E10 /* memeCollectionViewController.swift */,
 				15282B1E1B756713005CC63F /* AppDelegate.swift */,
+				150F95161B79788D00AFEB6D /* memeEditor.swift */,
 				15282B201B756713005CC63F /* ViewController.swift */,
 				15282B221B756713005CC63F /* Main.storyboard */,
 				15282B251B756713005CC63F /* Images.xcassets */,
@@ -97,9 +100,6 @@
 			isa = PBXGroup;
 			children = (
 				15282B1D1B756713005CC63F /* Info.plist */,
-				150F95161B79788D00AFEB6D /* memeEditor.swift */,
-				15F67C8A1B7C255D00068E10 /* memeTableViewController.swift */,
-				15F67C8C1B7C256D00068E10 /* memeCollectionViewController.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";

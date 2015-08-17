@@ -9,25 +9,37 @@
 import Foundation
 import UIKit
 
-class memeTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+class memeTableViewController: UITableViewController{
     var memes: [Meme]!
+    
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         
+        
         let object = UIApplication.sharedApplication().delegate
         let appDelegate = object as! AppDelegate
         memes = appDelegate.memes
+        tableView.reloadData()
+        
+    }
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
     }
 
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return memes.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
         
         let cell = tableView.dequeueReusableCellWithIdentifier("MemeCell") as! UITableViewCell
         let meme = self.memes[indexPath.row]
+        let displayImage = meme.memedImage
+        
+        
+        
         
         cell.textLabel?.text = meme.topText
         cell.imageView?.image = meme.imageOriginal

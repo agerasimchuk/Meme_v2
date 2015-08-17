@@ -16,9 +16,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <button key="tableHeaderView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="tOM-l8-HvF">
-                            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                            <rect key="frame" x="0.0" y="64" width="600" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Button">
+                            <state key="normal" title="Add New Meme">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
@@ -35,7 +35,6 @@
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="sec-FC-GgA" id="AOp-32-hKT"/>
-                            <outlet property="delegate" destination="sec-FC-GgA" id="Rxw-D4-fpi"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Sent Memes" id="SwF-Fa-G74"/>
@@ -44,10 +43,10 @@
             </objects>
             <point key="canvasLocation" x="1470" y="14"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--tabBarController-->
         <scene sceneID="1Vd-oh-Cx2">
             <objects>
-                <tabBarController id="0qz-pX-DBI" sceneMemberID="viewController">
+                <tabBarController title="tabBarController" id="0qz-pX-DBI" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Voe-jo-fmW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
@@ -61,7 +60,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QFA-KL-blf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-342" y="342"/>
+            <point key="canvasLocation" x="-337" y="343"/>
         </scene>
         <!--Table-->
         <scene sceneID="hoJ-Dk-erh">
@@ -97,10 +96,10 @@
             </objects>
             <point key="canvasLocation" x="684" y="708"/>
         </scene>
-        <!--Meme Collection View Controller-->
+        <!--Collection View Controller-->
         <scene sceneID="eBC-f0-nBw">
             <objects>
-                <collectionViewController id="NHi-ST-QF3" customClass="memeCollectionViewController" sceneMemberID="viewController">
+                <collectionViewController id="NHi-ST-QF3" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="btn-Se-xXM">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
