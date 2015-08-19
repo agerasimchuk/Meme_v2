@@ -19,6 +19,8 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     @IBOutlet weak var textBottom: UITextField!
 //@IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var shareButton: UIBarButtonItem!
+    @IBOutlet weak var bottomToolbar: UIToolbar!
+    @IBOutlet weak var topBar: UINavigationBar!
     
     
     
@@ -173,6 +175,8 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         
         //Hide toolbar and navbar
         navigationController?.navigationBar.hidden = true
+        bottomToolbar.hidden = true
+        topBar.hidden = true
         
         // Render view to an image
         UIGraphicsBeginImageContext(self.view.frame.size)
@@ -193,7 +197,8 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     }
     
     func save(){
-        let meme = Meme( topText: textTop.text!, bottomText: textBottom.text!, imageOriginal:
+        println("in save method")
+        var meme = Meme( topText: textTop.text!, bottomText: textBottom.text!, imageOriginal:
             imagePickerView.image!, memedImage: generateMemedImage())
         
         //Add it to the memes array in the Application Delegate
@@ -207,10 +212,7 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     }
     
     @IBAction func share(sender: AnyObject) {
-        
-        
-        //let memeSavedImage: () = save()
-        
+        println("in share method")
         let memeImage = generateMemedImage()
         
         let myactivityController = UIActivityViewController(activityItems: [memeImage], applicationActivities: nil)
@@ -220,6 +222,7 @@ UINavigationControllerDelegate, UITextFieldDelegate {
             println("save the Meme")
             self.dismissViewControllerAnimated(true, completion: nil)
         }
+        println("end of share method")
         presentViewController(myactivityController, animated: true, completion: nil)
 
         
