@@ -17,7 +17,6 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     @IBOutlet weak var camButton: UIButton!
     @IBOutlet weak var textTop: UITextField!
     @IBOutlet weak var textBottom: UITextField!
-//@IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var shareButton: UIBarButtonItem!
     @IBOutlet weak var bottomToolbar: UIToolbar!
     @IBOutlet weak var topBar: UINavigationBar!
@@ -219,10 +218,10 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         myactivityController.completionWithItemsHandler = {
             (s: String!, ok: Bool, items: [AnyObject]!, err:NSError!) -> Void in
             self.save()
-            println("save the Meme")
+ 
             self.dismissViewControllerAnimated(true, completion: nil)
         }
-        println("end of share method")
+
         presentViewController(myactivityController, animated: true, completion: nil)
 
         
@@ -234,7 +233,7 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         var controller: UITabBarController
         controller = self.storyboard?.instantiateViewControllerWithIdentifier("tabBarController") as! UITabBarController
         self.presentViewController(controller, animated: true, completion: nil)
-        println("mostro il risultato")
+
     }
 }
 
