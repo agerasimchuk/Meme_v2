@@ -124,7 +124,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="U0B-Gv-fpw">
-                            <size key="itemSize" width="50" height="50"/>
+                            <size key="itemSize" width="149" height="142"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -134,10 +134,28 @@
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="149" height="142"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iN5-M6-M2y">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                            <variation key="widthClass=compact" fixedFrame="YES">
+                                                <rect key="frame" x="0.0" y="-8" width="149" height="142"/>
+                                            </variation>
+                                        </imageView>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="iN5-M6-M2y"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="subviews">
+                                        <include reference="iN5-M6-M2y"/>
+                                    </mask>
+                                </variation>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -152,6 +170,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="flowLayout" destination="U0B-Gv-fpw" id="kPN-ZW-yNo"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Aue-eM-4ng" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -292,6 +313,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <items>
                                     <navigationItem title="meme Editor" id="NFp-dd-BAi">
+                                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="wbQ-cS-wZy">
+                                            <connections>
+                                                <action selector="cancelEditor:" destination="vXZ-lx-hvc" id="Vjn-3a-1xB"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="action" id="E6Y-70-713">
                                             <connections>
                                                 <action selector="share:" destination="vXZ-lx-hvc" id="Wfa-1P-3qZ"/>
@@ -375,6 +401,7 @@
                     <connections>
                         <outlet property="bottomToolbar" destination="SU5-EP-xYW" id="3bP-CX-Ve7"/>
                         <outlet property="camButton" destination="acr-Rh-8Vd" id="Aj6-cc-QUm"/>
+                        <outlet property="cancelButton" destination="wbQ-cS-wZy" id="52H-VZ-YXe"/>
                         <outlet property="imagePickerView" destination="BHM-yH-3ef" id="XrK-Ef-3gY"/>
                         <outlet property="shareButton" destination="E6Y-70-713" id="gCh-97-LPY"/>
                         <outlet property="textBottom" destination="rQI-73-KXX" id="4iF-K9-ipy"/>

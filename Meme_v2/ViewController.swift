@@ -20,6 +20,7 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     @IBOutlet weak var shareButton: UIBarButtonItem!
     @IBOutlet weak var bottomToolbar: UIToolbar!
     @IBOutlet weak var topBar: UINavigationBar!
+    @IBOutlet weak var cancelButton: UIBarButtonItem!
     
     
     
@@ -77,6 +78,11 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         
         
         return true
+    }
+    
+    
+    @IBAction func cancelEditor(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     
