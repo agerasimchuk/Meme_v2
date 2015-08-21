@@ -206,37 +206,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1Ko-fV-wV0">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1Ko-fV-wV0">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="64" width="368" height="487"/>
+                                </variation>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="1Ko-fV-wV0" secondAttribute="trailing" constant="38" id="U23-dO-ZUa"/>
-                            <constraint firstItem="1Ko-fV-wV0" firstAttribute="leading" secondItem="ZPn-0T-PVe" secondAttribute="leadingMargin" constant="38" id="kK2-xv-LJe"/>
-                            <constraint firstItem="Dv9-Q4-vhP" firstAttribute="top" secondItem="1Ko-fV-wV0" secondAttribute="bottom" constant="134" id="qzy-58-6rZ"/>
-                            <constraint firstItem="1Ko-fV-wV0" firstAttribute="top" secondItem="FPe-q6-7f6" secondAttribute="bottom" constant="114" id="xQ7-Ny-dp5"/>
-                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="1Ko-fV-wV0"/>
-                            </mask>
-                            <mask key="constraints">
-                                <exclude reference="qzy-58-6rZ"/>
-                                <exclude reference="U23-dO-ZUa"/>
-                                <exclude reference="kK2-xv-LJe"/>
-                                <exclude reference="xQ7-Ny-dp5"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="1Ko-fV-wV0"/>
-                            </mask>
-                            <mask key="constraints">
-                                <include reference="qzy-58-6rZ"/>
-                                <include reference="U23-dO-ZUa"/>
-                                <include reference="kK2-xv-LJe"/>
-                                <include reference="xQ7-Ny-dp5"/>
                             </mask>
                         </variation>
                     </view>

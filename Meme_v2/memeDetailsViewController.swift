@@ -22,11 +22,12 @@ class memeDetailsViewController: UIViewController{
   
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-println("in details")
+
         
         selectedMemedImage.image = receivedMemedImage.memedImage
+        //selectedMemedImage.contentMode = UIViewContentMode.ScaleToFill
         
-        println("after details details")
+
     }
 
 
