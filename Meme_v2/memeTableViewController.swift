@@ -52,14 +52,14 @@ return cell
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         
-     let MemeDetailsViewController = self.storyboard?.instantiateViewControllerWithIdentifier("memeDetails") as! memeDetailsViewController
+     let MemeDetailsViewController = storyboard?.instantiateViewControllerWithIdentifier("memeDetails") as! memeDetailsViewController
         
-        var memeImage = self.memes[indexPath.row].memedImage
+        var memeImage = memes[indexPath.row].memedImage
 
         
-        MemeDetailsViewController.receivedMemedImage = self.memes[indexPath.row]
+        MemeDetailsViewController.receivedMemedImage = memes[indexPath.row]
 
         
-        self.navigationController?.pushViewController(MemeDetailsViewController, animated: true)        }
+        navigationController?.pushViewController(MemeDetailsViewController, animated: true)        }
     
 }

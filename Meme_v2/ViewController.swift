@@ -82,7 +82,7 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     
     
     @IBAction func cancelEditor(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     
@@ -184,8 +184,8 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         topBar.hidden = true
         
         // Render view to an image
-        UIGraphicsBeginImageContext(self.view.frame.size)
-        view.drawViewHierarchyInRect(self.view.frame,
+        UIGraphicsBeginImageContext(view.frame.size)
+        view.drawViewHierarchyInRect(view.frame,
             afterScreenUpdates: true)
         let memedImage : UIImage =
         UIGraphicsGetImageFromCurrentImageContext()
@@ -237,8 +237,8 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     func showTableView(){
         //present table view
         var controller: UITabBarController
-        controller = self.storyboard?.instantiateViewControllerWithIdentifier("tabBarController") as! UITabBarController
-        self.presentViewController(controller, animated: true, completion: nil)
+        controller = storyboard?.instantiateViewControllerWithIdentifier("tabBarController") as! UITabBarController
+        presentViewController(controller, animated: true, completion: nil)
 
     }
 }
